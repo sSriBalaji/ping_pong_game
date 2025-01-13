@@ -56,6 +56,26 @@ class cBall{
 
 
 };
+class cPaddle{
+    private:
+        int x,y;
+        int originalX,originalY;
+    public:
+        cPaddle(){
+            x = y = 0;
+        }
+        cPaddle(int posX,int posY) : cPaddle(){ //delegrating contructor
+            originalX = posX;
+            originalY = posY;
+            x =  posX;
+            y = posY;
+        }
+        inline void reset(){x=originalX; y=originalY;}
+        inline void moveUp(){y--;}
+        inline void moveDown(){y++;}
+        
+
+};
 
 int main(){
     cBall ball(0,0);
